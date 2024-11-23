@@ -35,7 +35,7 @@ Routing overlay是实现路由功能的逻辑结构。它根据特定的算法�
 
 3. **Pastry Node Routing Decision**
 
-![屏幕截图 2024-11-22 144558](E:/BDIC/Stage3_1/DistributedSystems/Tutorial%203/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-11-22%20144558.png)
+![Q3](Q3.png)
 
 4.  **Reliable Multicast**
 
@@ -45,8 +45,6 @@ The Gossip architecture is a  framework  for implementing highly  available  ser
 
 A node receives or generates new information. It randomly selects one or more nodes to share the information. The receiving nodes continue propagating the information to their peers. The process repeats until the information has been shared with all nodes.
 
-
-
  Offline Payment Authorization
 
 - In scenarios where network connectivity is limited, payment systems like credit cards or mobile wallets allow offline authorization of transactions.
@@ -55,3 +53,19 @@ A node receives or generates new information. It randomly selects one or more no
   - Enforcing consistency would require real-time verification, causing delays or failures in areas with poor connectivity.
 - Outcome:
   - Transactions might be temporarily processed offline, with conflicts (e.g., insufficient funds) resolved during later reconciliation.
+
+6. **What are Symmetric and Asymmetric Encryption algorithms?**
+
+Symmetric encryption uses the same key for encryption and decryption, requiring secure key sharing. Asymmetric encryption (Public Key Cryptography) uses a pair of keys. The private key used for signing is referred to as the signature key and the public key as the verification key.
+
+7. **What are the main differences between capability lists and access lists?**
+
+8. **What do we mean by public key cryptography algorithms? Why are they generally used?**
+
+Public key cryptography algorithms use two keys: a public key for encryption and a private key for decryption. They are mainly used for secure key exchange, digital signatures, and ensuring confidentiality and authenticity without sharing private keys
+
+9. **Define the Bell-LaPadula security model.**
+
+10. **Explain grid computing.**
+
+11. **What are the primary requirements of a computing grid?**
