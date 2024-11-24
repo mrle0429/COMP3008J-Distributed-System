@@ -7,19 +7,19 @@ author: Le Liu
 
 # Distributed System Tutorial #3
 
-1. **What is routing?  What criteria are considered during a 'routing decision'?**
+1. **What is routing? What criteria are considered during a 'routing decision'?**
 
-routing是在网络中用于决定数据包从源地址到目标地址路径的过程。
+Routing is the process used in a network to determine the path for data packets from the source address to the destination address.
 
-routing decision需要考虑：
+Routing decisions need to consider:
 
-**Scalability：**节点增加仍能保证高效的路由路径决策
+**Scalability**: Ensuring efficient routing path decisions even as the number of nodes increases.
 
-**Load Balancing**：分散节点的负载，避免某些节点负载过重
+**Load Balancing**: Distributing the load across nodes to avoid overloading certain nodes.
 
-**Network Dynamics**：考虑节点增加，删除，故障情况。路由决策适应这种变化
+**Network Dynamics**: Considering the addition, removal, and failure of nodes. Routing decisions should adapt to these changes.
 
-**Fault Tolerance：**备用线路的考虑。
+**Fault Tolerance**: Considering backup routes.
 
 **Target Identification**
 
@@ -31,7 +31,8 @@ routing decision需要考虑：
 
 **Overlay** is used to clarify that it is an application layer routing mechanism (it is not a network layer mechanism like IP routing).
 
-Routing overlay是实现路由功能的逻辑结构。它根据特定的算法，在节点之间转发消息，确保快速通信。It directs the request to a node on which a replica (or the original) of   the resource resides. 它还负责增加，删除资源节点，并为他们创建GUID.
+
+**Routing overlay** is the logical structure that implements routing functionality. It forwards messages between nodes based on specific algorithms to ensure fast communication. It directs the request to a node on which a replica (or the original) of the resource resides. It is also responsible for adding and removing resource nodes and creating GUIDs for them.
 
 3. **Pastry Node Routing Decision**
 
@@ -39,7 +40,14 @@ Routing overlay是实现路由功能的逻辑结构。它根据特定的算法�
 
 4.  **Reliable Multicast**
 
-5. **Briefly explain the gossip architecture. Give an example of when it may be necessary to sacrifice consistency for high availability.**
+![Q4-0](Q4-0.png)
+![Q4-1](Q4-1.png)
+![Q4-2](Q4-2.png)
+![Q4-3](Q4-3.png)
+![Q4-4](Q4-4.png)
+![Q4-4](Q4-5.png)
+
+5.  **Briefly explain the gossip architecture. Give an example of when it may be necessary to sacrifice consistency for high availability.**
 
 The Gossip architecture is a  framework  for implementing highly  available  services.
 
@@ -60,12 +68,51 @@ Symmetric encryption uses the same key for encryption and decryption, requiring 
 
 7. **What are the main differences between capability lists and access lists?**
 
+> From DISTRIBUTED SYSTEMS Concepts and Design Fifth Edition 
+
+>  Capabilities: A set of capabilities is held by each process according to the domain in 
+which it is located.
+
+>  Access control lists: A list is stored with each resource, containing an entry of the form 
+<domain, operations> for each domain that has access to the resource and giving the 
+operations permitted to the domain. 
+
+Capability Lists: Stored with each subject (e.g., user, process) and list the resources they can access and the allowed operations. Verification is efficient as the request includes the capability (proof of access). Vulnerable to theft or misuse, and revoking capabilities is complex.
+
+Access Control Lists: Stored with each resource and list the subjects allowed to access it and their permissions. The server checks the resource's access list to verify the subject's permission.
+
 8. **What do we mean by public key cryptography algorithms? Why are they generally used?**
 
 Public key cryptography algorithms use two keys: a public key for encryption and a private key for decryption. They are mainly used for secure key exchange, digital signatures, and ensuring confidentiality and authenticity without sharing private keys
 
 9. **Define the Bell-LaPadula security model.**
 
-10. **Explain grid computing.**
+The approach taken is to 
+assign security levels to information and channels and to analyze the flow of information.  into channels with the aim of ensuring that high-level information cannot flow into 
+lower-level channels. (DISTRIBUTED SYSTEMS Concepts and Design Fifth Edition )
+
+> Form wikipedia.org
+> 
+> With Bell–LaPadula, users can create content only at or above their own security level (i.e. secret researchers can create secret or top-secret files but may not create public files; no write-down). Conversely, users can view content only at or below their own security level (i.e. secret researchers can view public or secret files, but may not view top-secret files; no read-up).
+
+
+10.  **Explain grid computing.**
+
+From DISTRIBUTED SYSTEMS Concepts and Design Fifth Edition 
+
+
+The name ‘Grid’ is used to refer to middleware that is designed to enable the sharing of 
+resources such as files, computers, software, data and sensors on a very large scale.
+Grid computing can generally be viewed as a precursor to the more general paradigm 
+of cloud computing with a bias towards support for scientific applications.
 
 11. **What are the primary requirements of a computing grid?**
+
+From DISTRIBUTED SYSTEMS Concepts and Design Fifth Edition 
+
+- Remote access to resources
+- Processing of data at the site where it is stored and managed.
+- The resource manager of a data archive should be able to create service instances 
+dynamically to deal with the particular section of data required.
+- Directory services.
+-  Software to manage queries, data transfers and advance reservation of resources,
